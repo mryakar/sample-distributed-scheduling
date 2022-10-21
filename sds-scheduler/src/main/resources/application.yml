@@ -1,0 +1,25 @@
+delay:
+  initial: 10000
+  fixed: 1000
+
+spring:
+  application:
+    name: sds-scheduler
+  datasource:
+    url: jdbc:postgresql://sds-postgres:5432/postgres
+    username: postgres
+    password: 1
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://sds-eureka:8761/eureka}
+
+  instance:
+    preferIpAddress: true
