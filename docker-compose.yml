@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  sds-postgres:
+    container_name: sds-postgres
+    image: sds-postgres
+    environment:
+      POSTGRES_PASSWORD: 1
+    networks:
+      - sds
+
+  sds-eureka:
+    container_name: sds-eureka
+    depends_on:
+      - sds-postgres
+    image: sds-eureka
+    ports:
+      - "8761:8761"
+    networks:
+      - sds
+
+  sds-scheduler:
+    image: sds-scheduler
+    depends_on:
+      - sds-eureka
+    networks:
+      - sds
+
+networks:
+  sds:
+    driver: bridge
