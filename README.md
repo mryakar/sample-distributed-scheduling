@@ -46,4 +46,4 @@ To stop it, use simply the Ctrl+C key combination.
 ## Result
 
 After running the project, you are going to see that the calendar time is printed out on the standard output
-each time with a different instance of scheduler.
+each time with a different instance of scheduler without overriding each other.
