@@ -4,12 +4,12 @@ This is a proof of concept project which a very basic level distributed job sche
 is applied to a very basic microservice architecture.
 
 In microservice architectures, naturally, every microservice may exist as many clones of itself, in other saying
-many instances of itself.
-This is because of the vertical scalability feature of the microservice architecture.
-Microservices are scaled in the vertical axis according to the system load, so the system continues
+many instances.
+This is because of the horizontal scalability feature of the microservice architecture.
+Microservices are scaled in the horizontal axis according to the system load, so the system continues
 to serve its functionalities without downtime and with using hardware resources efficiently.
 However, in a scenario which a set of jobs needs to be executed periodically, a scheduler must be used and let's say
-this scheduler microservice also needs to be scaled vertically.
+this scheduler microservice also needs to be scaled horizontally.
 At this point, every instance of the scheduler executes the jobs(especially the ones
 that take a big amount of time to complete its execution, like database related jobs) by itself,
 which can create data inconsistencies, unwanted complexity or at least unnecessary load on the system.
